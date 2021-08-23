@@ -2,16 +2,16 @@
 
 public class CameraController : MonoBehaviour {		 
 
-	public float panSpeed = 30f;
-	public float scrollSpeed = 5f;
+	public float panSpeed = 30f;  //speed of moving camera horizontally
+	public float scrollSpeed = 5f; // speed of moving closer or farther to the ground
 	public float panBorderThickness = 10f;
 	public float minY = 10f;
 	public float maxY = 80f;
 
 	bool doMovement = true;
-	// Update is called once per frame
+
 	void Update () {
-		//using for turn on/off the moving mode
+		//using for turning on or turning off the moving mode
 		if (Input.GetKeyDown("p"))
 			doMovement = !doMovement;
 		if (!doMovement)

@@ -4,10 +4,10 @@ public class Enemy : MonoBehaviour {
 
 	public float speed = 10f;
 	private Transform target;
-	private int wavepointIndex = 0;
+	private int waypointIndex = 0;	  //the target waypoint index
 
 	void Start () {
-		target = WayPoints.points[0];
+		target = WayPoints.points[0];	 //first position to move to
 	}
 	
 	// Update is called once per frame
@@ -16,16 +16,16 @@ public class Enemy : MonoBehaviour {
 		transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
 		if (Vector3.Distance(transform.position, target.position) < 0.2f) {
-			getNextPoint();
+			getNextPoint();	 //if we have got to the waypoint,we will move the next one
         }
 	}
 
 	void getNextPoint() {
-		if(wavepointIndex >= WayPoints.points.Length - 1) {
+		if(waypointIndex >= WayPoints.points.Length - 1) { //we have got to the last waypoints
 			Destroy(gameObject);
 			return ;
         }
-		wavepointIndex++;
-		target = WayPoints.points[wavepointIndex];
+		waypointIndex++;
+		target = WayPoints.points[waypointIndex];
     }
 }
