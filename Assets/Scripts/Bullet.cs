@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Bulled : MonoBehaviour {
+public class Bullet : MonoBehaviour {
 
 	private Transform target;  //the target to hit
 	public float speed = 70f;  //speed of moving

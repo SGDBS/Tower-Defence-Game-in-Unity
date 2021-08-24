@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BuiltManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Bulled.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\waveSpawner.cs" />
     <Compile Include="Assets\Scripts\WayPoints.cs" />

@@ -54,9 +54,9 @@ public class Turret : MonoBehaviour {
 
 
 	void Shoot() {
-		GameObject bulledGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		Bulled bulled = bulledGo.GetComponent<Bulled>();
-		bulled.seek(target);
+		GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Bullet bullet = bulletGo.GetComponent<Bullet>();
+		bullet.seek(target);
 	}
 
 	void LockOnTarget() {
