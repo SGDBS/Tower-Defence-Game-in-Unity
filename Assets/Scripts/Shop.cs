@@ -2,19 +2,19 @@
 
 public class Shop : MonoBehaviour {
 
-    BuiltManager builtManager;
-
+    BuildManager buildManager;
+    //using for set what to build
     void Start() {
-        builtManager = BuiltManager.instance;
+        buildManager = BuildManager.instance;
     }
 
     public void PurchaseStandardTurret() {
         Debug.Log("Standard Turret Purchased");
-        BuiltManager.instance.setTurretToBuilt(builtManager.standardTurretPrefab);
+        BuildManager.instance.setTurretToBuild(buildManager.standardTurretPrefab);
     }
 
     public void PurchaseBasicTurret() {
         Debug.Log("Basic Turret Purchased");
-        BuiltManager.instance.setTurretToBuilt(builtManager.BasicTurretPrefab);
+        BuildManager.instance.setTurretToBuild(buildManager.BasicTurretPrefab);
     }
 }

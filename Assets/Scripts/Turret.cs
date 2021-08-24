@@ -4,9 +4,9 @@ using System.Collections;
 public class Turret : MonoBehaviour {
 
 	[Header("Attributes")]
-	private Transform target;
+	private Transform target;  //the target to lock on and shoot
 	public string EnemyTag = "Enemy";
-	public Transform partToRotation;
+	public Transform partToRotation;  //the position to rotate the top of turret
 
 	[Header("Unity Setup Fields")]
 	public float range = 15f;
@@ -14,13 +14,13 @@ public class Turret : MonoBehaviour {
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
 	public GameObject bulletPrefab;
-	public Transform firePoint;
+	public Transform firePoint;   //the position to instantiate	the bullet
 
 	void Start () {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    }
+        InvokeRepeating("UpdateTarget", 0f, 0.5f); // call function "UpdateTarget" per 0.5 second
+	}
 
-    void UpdateTarget() {
+    void UpdateTarget() {  // find the target to lock on
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(EnemyTag);
 		float shortestDistance = Mathf.Infinity;
 		GameObject nearestEnemy = null;
@@ -66,7 +66,7 @@ public class Turret : MonoBehaviour {
 		partToRotation.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-	void OnDrawGizmosSelected() {
+	void OnDrawGizmosSelected() {  // show the range of fire in the Scene(not in game)
 		Gizmos.color = Color.blue;
 		Gizmos.DrawWireSphere(transform.position, range);
     }
