@@ -5,18 +5,25 @@ public class BuildManager : MonoBehaviour {
     public GameObject standardTurretPrefab; //Store the turret prefab
     public GameObject BasicTurretPrefab;
 
-    private GameObject turretToBuild; // The turret to build now
+    private TurretBluePrint turretToBuild; // The turret to build now
 
     void Awake() {
         instance = this;
         //turretToBuilt = standardTurretPrefab;
     }                                                     
        
-    public void setTurretToBuild(GameObject turret) { //using for modifying  what to build
+    public void selectTurretToBuild(TurretBluePrint turret) { //using for modifying  what to build
         turretToBuild = turret;     
     }
 
-    public GameObject GetTurretToBuild() { //using for getting what to build
-        return turretToBuild;
+    public bool CanBuild {  //check for if we can build
+        get {
+            return turretToBuild != null;
+        }
+    }
+
+    public void BuildTurretOn(Node node) {
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.getBuildPosition(), Quaternion.identity);
+        node.turret = turret;
     }
 }

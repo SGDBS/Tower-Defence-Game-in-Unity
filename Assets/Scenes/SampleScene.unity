@@ -888,6 +888,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1393678486}
     m_Modifications:
+    - target: {fileID: 1341592707714392, guid: 401b9607673ec7c4bb32992ece780e38, type: 3}
+      propertyPath: m_Name
+      value: ShopMissileLauncherItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1393678490}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectMissileLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PurchaseStandardTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 224884828910691868, guid: 401b9607673ec7c4bb32992ece780e38,
         type: 3}
       propertyPath: m_Pivot.x
@@ -978,7 +1022,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114706100296302684, guid: 401b9607673ec7c4bb32992ece780e38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 401b9607673ec7c4bb32992ece780e38, type: 3}
 --- !u!1001 &167817365
 PrefabInstance:
@@ -2988,13 +3033,43 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1393678490}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseBasicTurret
+      value: selectBasicTurret
       objectReference: {fileID: 0}
     - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793679105958052, guid: 401b9607673ec7c4bb32992ece780e38,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 224884828910691868, guid: 401b9607673ec7c4bb32992ece780e38,
         type: 3}
@@ -3086,7 +3161,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114706100296302684, guid: 401b9607673ec7c4bb32992ece780e38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 401b9607673ec7c4bb32992ece780e38, type: 3}
 --- !u!224 &475571710 stripped
 RectTransform:
@@ -7816,6 +7892,7 @@ GameObject:
   - component: {fileID: 1393678488}
   - component: {fileID: 1393678487}
   - component: {fileID: 1393678489}
+  - component: {fileID: 1393678490}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -7908,6 +7985,24 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1393678490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393678485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c2fe2930756aa4c82d598007ba0f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasicTurret:
+    prefab: {fileID: 1178270581939506, guid: 15d0602681b5a3d43a5a00725a04b48a, type: 3}
+    cost: 100
+  MissileLauncher:
+    prefab: {fileID: 1109449788779750, guid: 76cbf16b862cb904092a06367c2807a8, type: 3}
+    cost: 250
 --- !u!1001 &1397751769
 PrefabInstance:
   m_ObjectHideFlags: 0

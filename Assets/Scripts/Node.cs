@@ -3,20 +3,26 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour {
 
+    [Header("System Initialization")]
     public Color hoverColor;
     public Renderer rend;
     public Color startColor;
     public Vector3 positionOffset;
+    [Header("Optional")]
+    public GameObject turret;   //the turret we have built
 
     BuildManager buildManager;
-    private GameObject turret;   //the turret we have built
 
     void Start() {
         buildManager = BuildManager.instance;
     }
 
+    public Vector3 getBuildPosition() {
+        return transform.position + positionOffset;
+    }
+
     void OnMouseEnter() {
-        if (buildManager.GetTurretToBuild() == null) {
+        if (!buildManager.CanBuild) {
             return;
         }
         rend.material.color = hoverColor;
@@ -27,7 +33,7 @@ public class Node : MonoBehaviour {
     }
 
     void OnMouseDown() {
-        if (buildManager.GetTurretToBuild() == null) {
+        if (!buildManager.CanBuild) {
             return;
         }       
 
@@ -35,7 +41,7 @@ public class Node : MonoBehaviour {
             Debug.Log("We can not build here!!!!!!");
             return;
         }
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject) Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+
+        buildManager.BuildTurretOn(this);
     }
 }
