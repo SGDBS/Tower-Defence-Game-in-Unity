@@ -5,6 +5,7 @@ public class BuildManager : MonoBehaviour {
     public GameObject buildEffect;
     public GameObject standardTurretPrefab; //Store the turret prefab
     public GameObject BasicTurretPrefab;
+    public GameObject LaserBeamer;
 
     private TurretBluePrint turretToBuild; // The turret to build now
 

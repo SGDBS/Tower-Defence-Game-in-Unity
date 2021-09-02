@@ -13,8 +13,11 @@ public class Turret : MonoBehaviour {
 	public float turnSpeed = 15f;
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
-	public GameObject bulletPrefab;
 	public Transform firePoint;   //the position to instantiate	the bullet
+	[Header("use bullet or not")]
+	public GameObject bulletPrefab;
+	public bool useLaser = false;
+	public LineRenderer lineRenderer;
 
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // call function "UpdateTarget" per 0.5 second
@@ -43,15 +46,29 @@ public class Turret : MonoBehaviour {
 	
 	void Update () {
 		fireCountdown -= Time.deltaTime;
-		if (target == null)
+		if (target == null) {
+			if (lineRenderer.enabled)
+				lineRenderer.enabled = false;
 			return;
+		}
 		LockOnTarget();
+		if(useLaser) {
+			LaserShoot();
+			return;
+        }
 		if(fireCountdown <= 0f) {
 			Shoot();
 			fireCountdown = 1f / fireRate;
         }
 	}
 
+
+	void LaserShoot() {
+		if (lineRenderer.enabled == false)
+			lineRenderer.enabled = true;
+		lineRenderer.SetPosition(0, firePoint.position);
+		lineRenderer.SetPosition(1, target.position);
+    }
 
 	void Shoot() {
 		GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
