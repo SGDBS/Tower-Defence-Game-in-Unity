@@ -42,6 +42,7 @@ public class Turret : MonoBehaviour {
 	
 	
 	void Update () {
+		fireCountdown -= Time.deltaTime;
 		if (target == null)
 			return;
 		LockOnTarget();
@@ -49,7 +50,6 @@ public class Turret : MonoBehaviour {
 			Shoot();
 			fireCountdown = 1f / fireRate;
         }
-		fireCountdown -= Time.deltaTime;
 	}
 
 

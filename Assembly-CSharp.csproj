@@ -60,14 +60,18 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
+    <Compile Include="Assets\Scripts\PlayerStatus.cs" />
     <Compile Include="Assets\Scripts\waveSpawner.cs" />
     <Compile Include="Assets\Scripts\WayPoints.cs" />
-    <Compile Include="Assets\BasicBulled.cs" />
+    <Compile Include="Assets\Scripts\MoneyUI.cs" />
+    <Compile Include="Assets\Scripts\BasicBulled.cs" />
+    <Compile Include="Assets\Scripts\TurretBluePrint.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
-    <Compile Include="Assets\BasicTurret.cs" />
-    <Compile Include="Assets\Scripts\TurretBluePrint.cs" />
+    <Compile Include="Assets\Scripts\BasicTurret.cs" />
+    <Compile Include="Assets\LifeUI.cs" />
+    <Compile Include="Assets\gameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Roboto\LICENSE.txt" />
