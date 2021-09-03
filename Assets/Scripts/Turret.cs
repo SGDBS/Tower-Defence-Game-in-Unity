@@ -14,10 +14,13 @@ public class Turret : MonoBehaviour {
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
 	public Transform firePoint;   //the position to instantiate	the bullet
-	[Header("use bullet or not")]
+	[Header("use bullet")]
 	public GameObject bulletPrefab;
+	[Header("use laser")]
 	public bool useLaser = false;
 	public LineRenderer lineRenderer;
+	public ParticleSystem laserEffect;
+	public Light light;
 
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // call function "UpdateTarget" per 0.5 second
@@ -47,8 +50,11 @@ public class Turret : MonoBehaviour {
 	void Update () {
 		fireCountdown -= Time.deltaTime;
 		if (target == null) {
-			if (lineRenderer.enabled)
+			if (lineRenderer.enabled) {
 				lineRenderer.enabled = false;
+				laserEffect.Stop();
+				light.enabled = false;
+			}
 			return;
 		}
 		LockOnTarget();
@@ -64,10 +70,17 @@ public class Turret : MonoBehaviour {
 
 
 	void LaserShoot() {
-		if (lineRenderer.enabled == false)
+		if (lineRenderer.enabled == false) {
 			lineRenderer.enabled = true;
+			laserEffect.Play();
+			light.enabled = true;
+		}
 		lineRenderer.SetPosition(0, firePoint.position);
 		lineRenderer.SetPosition(1, target.position);
+
+		Vector3 dir = firePoint.position - target.position;
+		laserEffect.transform.position = target.position + dir.normalized;
+		laserEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
 	void Shoot() {
