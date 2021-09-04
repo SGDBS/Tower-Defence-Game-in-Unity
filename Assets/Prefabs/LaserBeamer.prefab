@@ -213,7 +213,9 @@ MonoBehaviour:
   useLaser: 1
   lineRenderer: {fileID: 401544130951475235}
   laserEffect: {fileID: 2120709382210340813}
-  light: {fileID: 1007225265197726140}
+  lightEffect: {fileID: 1007225265197726140}
+  damagePerSecond: 50
+  slowPct: 0.5
 --- !u!120 &401544130951475235
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class Turret : MonoBehaviour {
-
-	[Header("Attributes")]
 	private Transform target;  //the target to lock on and shoot
+	private Enemy targetEnemy;
+	[Header("Attributes")]
 	public string EnemyTag = "Enemy";
 	public Transform partToRotation;  //the position to rotate the top of turret
 
@@ -20,7 +20,9 @@ public class Turret : MonoBehaviour {
 	public bool useLaser = false;
 	public LineRenderer lineRenderer;
 	public ParticleSystem laserEffect;
-	public Light light;
+	public Light lightEffect;
+	public float damagePerSecond = 50;
+	public float slowPct = 0.5f;
 
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f); // call function "UpdateTarget" per 0.5 second
@@ -40,6 +42,7 @@ public class Turret : MonoBehaviour {
 
 		if(nearestEnemy != null && shortestDistance <= range) {
 			target = nearestEnemy.transform;
+			targetEnemy = target.GetComponent<Enemy>();
         }
 		else {
 			target = null;
@@ -53,7 +56,7 @@ public class Turret : MonoBehaviour {
 			if (lineRenderer.enabled) {
 				lineRenderer.enabled = false;
 				laserEffect.Stop();
-				light.enabled = false;
+				lightEffect.enabled = false;
 			}
 			return;
 		}
@@ -73,10 +76,13 @@ public class Turret : MonoBehaviour {
 		if (lineRenderer.enabled == false) {
 			lineRenderer.enabled = true;
 			laserEffect.Play();
-			light.enabled = true;
+			lightEffect.enabled = true;
 		}
 		lineRenderer.SetPosition(0, firePoint.position);
 		lineRenderer.SetPosition(1, target.position);
+
+		targetEnemy.takeDamage(damagePerSecond * Time.deltaTime);
+		targetEnemy.changeSpeed(slowPct);
 
 		Vector3 dir = firePoint.position - target.position;
 		laserEffect.transform.position = target.position + dir.normalized;
