@@ -53,7 +53,7 @@ public class Turret : MonoBehaviour {
 	void Update () {
 		fireCountdown -= Time.deltaTime;
 		if (target == null) {
-			if (lineRenderer.enabled) {
+			if (useLaser && lineRenderer.enabled) {
 				lineRenderer.enabled = false;
 				laserEffect.Stop();
 				lightEffect.enabled = false;

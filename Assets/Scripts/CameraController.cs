@@ -9,8 +9,19 @@ public class CameraController : MonoBehaviour {
 	public float maxY = 80f;
 
 	bool doMovement = true;
+	Vector3 startPosition;
 
-	void Update () {
+    void Start() {
+		startPosition = this.transform.position;
+    }
+
+    void Update () {
+
+		if(gameManager.GameIsOver) {
+			transform.position = startPosition;
+			return;
+        }
+
 		//using for turning on or turning off the moving mode
 		if (Input.GetKeyDown("p"))
 			doMovement = !doMovement;

@@ -66,13 +66,15 @@
     <Compile Include="Assets\Scripts\waveSpawner.cs" />
     <Compile Include="Assets\Scripts\WayPoints.cs" />
     <Compile Include="Assets\Scripts\MoneyUI.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\BasicBulled.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\TurretBluePrint.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\BasicTurret.cs" />
-    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\NodeUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Roboto\LICENSE.txt" />

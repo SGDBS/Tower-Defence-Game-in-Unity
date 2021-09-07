@@ -9,6 +9,7 @@ public class Node : MonoBehaviour {
     public Color startColor;
     public Color notEnoughColor;
     public Vector3 positionOffset;
+    public NodeUI nodeUI;
     [Header("Optional")]
     public GameObject turret;   //the turret we have built
 
@@ -38,13 +39,19 @@ public class Node : MonoBehaviour {
         rend.material.color = startColor;
     }
 
-    void OnMouseDown() {
-        if (!buildManager.CanBuild) {
-            return;
-        }       
+    void OnMouseDown() {      
+
+        if(this.turret != null) {
+            buildManager.selectNode(this);
+            nodeUI.SetTarget(this);
+        }
 
         if(turret != null) {
             Debug.Log("We can not build here!!!!!!");
+            return;
+        }
+
+        if (!buildManager.CanBuild) {
             return;
         }
 

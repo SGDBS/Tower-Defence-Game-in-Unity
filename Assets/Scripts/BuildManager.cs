@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour {
     public GameObject LaserBeamer;
 
     private TurretBluePrint turretToBuild; // The turret to build now
+    private Node selectedNode;
 
     void Awake() {
         instance = this;
@@ -15,7 +16,13 @@ public class BuildManager : MonoBehaviour {
     }                                                     
        
     public void selectTurretToBuild(TurretBluePrint turret) { //using for modifying  what to build
-        turretToBuild = turret;     
+        turretToBuild = turret;
+        selectedNode = null;
+    }
+
+    public void selectNode(Node node) {
+        selectedNode = node;
+        turretToBuild = null;
     }
 
     public bool CanBuild {  //check for if we can build
