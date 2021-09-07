@@ -7,6 +7,8 @@ public class BuildManager : MonoBehaviour {
     public GameObject BasicTurretPrefab;
     public GameObject LaserBeamer;
 
+    public NodeUI nodeUI;
+
     private TurretBluePrint turretToBuild; // The turret to build now
     private Node selectedNode;
 
@@ -18,11 +20,22 @@ public class BuildManager : MonoBehaviour {
     public void selectTurretToBuild(TurretBluePrint turret) { //using for modifying  what to build
         turretToBuild = turret;
         selectedNode = null;
+        nodeUI.Hide();
     }
 
     public void selectNode(Node node) {
+        if(selectedNode == node) {
+            DeSelectNode();
+            return;
+        }
         selectedNode = node;
         turretToBuild = null;
+        nodeUI.SetTarget(node);
+    }
+
+    public void DeSelectNode() {
+        selectedNode = null;
+        nodeUI.Hide();
     }
 
     public bool CanBuild {  //check for if we can build

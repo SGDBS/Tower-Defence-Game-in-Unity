@@ -9,7 +9,11 @@ public class Enemy : MonoBehaviour {
 	public int value = 50;
 	public GameObject dieEffect;
 
-	public void takeDamage(double damage) {
+    void Start() {
+		health += waveSpawner.waveIndex * 30;
+    }
+
+    public void takeDamage(double damage) {
 		health -= damage;
 		if(health <= 0) {
 			die();

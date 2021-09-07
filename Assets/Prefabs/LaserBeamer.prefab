@@ -214,7 +214,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 401544130951475235}
   laserEffect: {fileID: 2120709382210340813}
   lightEffect: {fileID: 1007225265197726140}
-  damagePerSecond: 50
+  damagePerSecond: 200
   slowPct: 0.5
 --- !u!120 &401544130951475235
 LineRenderer:

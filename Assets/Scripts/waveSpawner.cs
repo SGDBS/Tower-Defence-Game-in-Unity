@@ -10,10 +10,13 @@ public class waveSpawner : MonoBehaviour {
 	public float timeBetweenWavers = 5f;
 
 	private float countdown = 2f;
-	private int waveIndex = 0;
+	public static int waveIndex = 0;
 
-	
-	void Update () {
+    void Start() {
+		waveIndex = 0;  
+    }
+
+    void Update () {
 		if(countdown <= 0f) {
 			StartCoroutine(spawnWave());
 			countdown = timeBetweenWavers;
