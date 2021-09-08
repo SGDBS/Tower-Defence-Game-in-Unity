@@ -14,4 +14,9 @@ public class NodeUI : MonoBehaviour
     public void Hide() {
         ui.SetActive(false);
     }
+
+    public void Upgrade() {
+        target.UpGrade();
+        BuildManager.instance.DeSelectNode();
+    }
 }

@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 2363975963821627093}
   - component: {fileID: 401544130951475235}
   m_Layer: 0
-  m_Name: LaserBeamer
+  m_Name: LaserBeamer (upgrade)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyTag: Enemy
   partToRotation: {fileID: 920416033982901064}
-  range: 15
+  range: 20
   turnSpeed: 15
   fireRate: 1
   firePoint: {fileID: 920416033607506762}
@@ -214,8 +214,8 @@ MonoBehaviour:
   lineRenderer: {fileID: 401544130951475235}
   laserEffect: {fileID: 2120709382210340813}
   lightEffect: {fileID: 1007225265197726140}
-  damagePerSecond: 150
-  slowPct: 0.5
+  damagePerSecond: 250
+  slowPct: 0.7
 --- !u!120 &401544130951475235
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -8418019662413110148, guid: 2c1f1b3644268274ab55a8f74ca1c26e, type: 3}
-  - {fileID: 772359722248288438, guid: 2c1f1b3644268274ab55a8f74ca1c26e, type: 3}
+  - {fileID: 2100000, guid: 489a72defb702534cbe573732cd5f350, type: 2}
   - {fileID: 4387638107276554849, guid: 2c1f1b3644268274ab55a8f74ca1c26e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0

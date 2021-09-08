@@ -4015,7 +4015,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 424897908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 631620169}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &424897908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11195,13 +11207,22 @@ MonoBehaviour:
   BasicTurret:
     prefab: {fileID: 1178270581939506, guid: 15d0602681b5a3d43a5a00725a04b48a, type: 3}
     cost: 100
+    upgradePrefab: {fileID: 1178270581939506, guid: e229c97705d0fb140bdd12b73d7b56f7,
+      type: 3}
+    upgradeCost: 150
   MissileLauncher:
     prefab: {fileID: 1109449788779750, guid: 76cbf16b862cb904092a06367c2807a8, type: 3}
     cost: 250
+    upgradePrefab: {fileID: 1109449788779750, guid: c44c0602805005d4fae845998e637eb6,
+      type: 3}
+    upgradeCost: 400
   LaserBeamer:
     prefab: {fileID: 2363975963821627092, guid: b1cbc7ad8d99af64e8dc1ca8d3dabda9,
       type: 3}
     cost: 300
+    upgradePrefab: {fileID: 2363975963821627092, guid: 68123b6a7397352488f2760873449b65,
+      type: 3}
+    upgradeCost: 500
 --- !u!114 &1583408318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11331,12 +11352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 717922788034534343, guid: 71be93ee7bb9df14f9f1d891c0ea3a81,
     type: 3}
-  standardTurretPrefab: {fileID: 1109449788779750, guid: 76cbf16b862cb904092a06367c2807a8,
-    type: 3}
-  BasicTurretPrefab: {fileID: 1178270581939506, guid: 15d0602681b5a3d43a5a00725a04b48a,
-    type: 3}
-  LaserBeamer: {fileID: 2363975963821627092, guid: b1cbc7ad8d99af64e8dc1ca8d3dabda9,
-    type: 3}
   nodeUI: {fileID: 631620169}
 --- !u!114 &1592695244
 MonoBehaviour:
@@ -11364,7 +11379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9dbe51f4c2abfe4eb14aed1f0f87d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 961340802}
 --- !u!1001 &1593004289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14642,7 +14657,6 @@ GameObject:
   - component: {fileID: 1920377152}
   - component: {fileID: 1920377151}
   - component: {fileID: 1920377150}
-  - component: {fileID: 1920377149}
   m_Layer: 5
   m_Name: LifeCanvas
   m_TagString: Untagged
@@ -14650,23 +14664,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1920377149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920377148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1920377150
 MonoBehaviour:
   m_ObjectHideFlags: 0
