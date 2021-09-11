@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\BasicTurret.cs" />
     <Compile Include="Assets\Scripts\NodeUI.cs" />
+    <Compile Include="Assets\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Roboto\LICENSE.txt" />

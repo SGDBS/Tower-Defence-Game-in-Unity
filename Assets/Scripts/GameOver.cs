@@ -8,9 +8,11 @@ public class GameOver : MonoBehaviour
 
     private void OnEnable() {
         roundText.text = PlayerStatus.rounds.ToString();
+        Time.timeScale = 0f;
     }
 
     public void Retry() {
+        Time.timeScale = 0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

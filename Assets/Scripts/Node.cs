@@ -15,6 +15,8 @@ public class Node : MonoBehaviour {
     BuildManager buildManager;
     public bool isUpgraded = false;
 
+    private int turretValue; //using for selling
+
     void Start() {
         buildManager = BuildManager.instance;
     }
@@ -43,10 +45,6 @@ public class Node : MonoBehaviour {
 
         if(this.turret != null) {
             buildManager.selectNode(this);
-        }
-
-        if(turret != null) {
-            Debug.Log("We can not build here!!!!!!");
             return;
         }
 
@@ -67,8 +65,9 @@ public class Node : MonoBehaviour {
         turret = _turret;
         turretBluePrint = turretToBuild;
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, getBuildPosition(), Quaternion.identity);
-        Destroy(effect, 3f);
+        Destroy(effect, 2f);
         PlayerStatus.money -= turretToBuild.cost;
+        turretValue = turretToBuild.cost;
     }
 
     public void UpGrade() {
@@ -82,9 +81,21 @@ public class Node : MonoBehaviour {
         isUpgraded = true;
         GameObject _turret = (GameObject)Instantiate(turretBluePrint.upgradePrefab, getBuildPosition(), Quaternion.identity);
         turret = _turret;
-        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, getBuildPosition(), Quaternion.identity);
-        Destroy(effect, 3f);
+        GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, getBuildPosition(), Quaternion.identity);
+        Destroy(effect, 2.5f);
         PlayerStatus.money -= turretBluePrint.upgradeCost;
+        turretValue += turretBluePrint.upgradeCost;
     }
 
+
+    public void Sell() {
+        Destroy(turret);
+        PlayerStatus.money += turretValue / 2;
+        turret = null;
+        turretBluePrint = null;
+    }
+
+    public int getSellValue() {
+        return turretValue / 2;
+    }
 }

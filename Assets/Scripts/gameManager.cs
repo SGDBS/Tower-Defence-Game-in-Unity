@@ -4,6 +4,7 @@ public class gameManager : MonoBehaviour
 {
     public static bool GameIsOver = false;
     public GameObject gameOverUI;
+    public GameObject gamePauseUI;
 
     void Start() {
         GameIsOver = false; 
@@ -20,7 +21,12 @@ public class gameManager : MonoBehaviour
             return;
         }
 
-        if(PlayerStatus.life <= 0) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            gamePauseUI.GetComponent<Pause>().GamePause();
+        }
+
+
+        if (PlayerStatus.life <= 0) {
             EndGame();
             return;
         }

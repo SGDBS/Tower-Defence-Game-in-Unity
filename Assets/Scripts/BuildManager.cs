@@ -3,6 +3,7 @@
 public class BuildManager : MonoBehaviour {
     public static BuildManager instance;
     public GameObject buildEffect;
+    public GameObject upgradeEffect;
 
     public NodeUI nodeUI;
 

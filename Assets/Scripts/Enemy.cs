@@ -1,24 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
 	public float startSpeed = 10f;
 	[HideInInspector]
 	public float speed;
-	public double health = 100;
+	public float startHealth = 100;
+	private float health;
 	public int value = 50;
 	public GameObject dieEffect;
 
+
+	[Header("Unity Stuff")]
+	public Image healthbar;
+
     void Start() {
-		health += waveSpawner.waveIndex * 30;
+		startHealth += waveSpawner.waveIndex * 30;
+		health = startHealth;
     }
 
-    public void takeDamage(double damage) {
+    public void takeDamage(float damage) {
 		health -= damage;
 		if(health <= 0) {
 			die();
 			return;
         }
+		healthbar.fillAmount = health / startHealth;
     }
 
 	public void changeSpeed(float pct) {
