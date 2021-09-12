@@ -43,12 +43,12 @@ public class Node : MonoBehaviour {
 
     void OnMouseDown() {      
 
-        if(this.turret != null) {
+        if(this.turret != null) {   // there is no turret in this node
             buildManager.selectNode(this);
             return;
         }
 
-        if (!buildManager.CanBuild) {
+        if (!buildManager.CanBuild) {  // check if we select a turret to build
             return;
         }
 

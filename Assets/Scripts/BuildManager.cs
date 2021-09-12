@@ -21,7 +21,7 @@ public class BuildManager : MonoBehaviour {
 
     public void selectTurretToBuild(TurretBluePrint turret) { //using for modifying  what to build
         turretToBuild = turret;
-        selectedNode = null;
+        selectedNode = null; //When selecting a turret,we need deselect the node
         nodeUI.Hide();
     }
 
