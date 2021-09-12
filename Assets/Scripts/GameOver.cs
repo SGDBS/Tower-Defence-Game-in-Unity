@@ -12,11 +12,12 @@ public class GameOver : MonoBehaviour
     }
 
     public void Retry() {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Menu() {
+        SceneManager.LoadScene("menu");
         Debug.Log("Go to menu");
     }
 }

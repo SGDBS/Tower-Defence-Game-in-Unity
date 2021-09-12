@@ -17,7 +17,9 @@ public class Pause : MonoBehaviour
     }
 
     public void Menu() {
+        Time.timeScale = 1f;
         Debug.Log("Go to menu");
+        SceneManager.LoadScene("menu");
     }
 
     public void GamePause() {

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MoneyUI.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\BasicBulled.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\TurretBluePrint.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\BasicTurret.cs" />
     <Compile Include="Assets\Scripts\NodeUI.cs" />
-    <Compile Include="Assets\Pause.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Roboto\LICENSE.txt" />
@@ -743,6 +744,15 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Sysroot.Linux_x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.SysrootPackage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
