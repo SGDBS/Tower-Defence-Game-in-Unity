@@ -29,7 +29,7 @@ public class waveSpawner : MonoBehaviour {
 	IEnumerator spawnWave() {
 		waveIndex++;
 		PlayerStatus.rounds++;
-		for (int i = 0; i < waveIndex; i++) {
+		for (int i = 0; i < Mathf.Min(waveIndex, 10); i++) {
 			spawnEnemy();
 			yield return new WaitForSeconds(0.5f);
         }

@@ -17,7 +17,11 @@ public class Enemy : MonoBehaviour {
 
     void Start() {
 		startHealth += waveSpawner.waveIndex * 30;
+		startHealth = Mathf.Min(startHealth, 300f);
+		startSpeed += waveSpawner.waveIndex * 0.5f;
+		startSpeed = Mathf.Min(20f, startSpeed);
 		health = startHealth;
+		speed = startSpeed;
     }
 
     public void takeDamage(float damage) {

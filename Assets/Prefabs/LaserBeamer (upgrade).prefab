@@ -205,7 +205,7 @@ MonoBehaviour:
   EnemyTag: Enemy
   partToRotation: {fileID: 920416033982901064}
   range: 20
-  turnSpeed: 15
+  turnSpeed: 25
   fireRate: 1
   firePoint: {fileID: 920416033607506762}
   bulletPrefab: {fileID: 2076796490018743662, guid: 59d1f71553cc70f4cbe3fd9f6c7b704d,
@@ -214,7 +214,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 401544130951475235}
   laserEffect: {fileID: 2120709382210340813}
   lightEffect: {fileID: 1007225265197726140}
-  damagePerSecond: 300
+  damagePerSecond: 400
   slowPct: 0.7
 --- !u!120 &401544130951475235
 LineRenderer:
